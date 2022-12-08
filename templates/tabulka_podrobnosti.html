@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>rozhrani</th>
+        <th>info</th>
+        <th>znovunahozeni portu</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for k, v in info.items() %}
+      <tr>
+        <th rowspan={{ v|length }} scope="rowgroup">{{ip}} : {{k}}</th>
+          <td><pre>{{ v }}</pre></td>
+          <td><form method="post" action="{{ url_for('flask_nahozeni_portu') }}">
+            <input type='hidden' value="{{ip}}" name="switch">
+            <input type="hidden" value="{{k}}" name="port" />
+            <input type="submit" value="znovunahozeni portu" >
+        </form></td>
+        </form>
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

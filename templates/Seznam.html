@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+    <table style="width:80%;background-color:#FFFFE0;border-color:#5a515a">
+        <tr style="background-color:#BDB76B;color:#ffffff;">
+            <th>Zarizeni</th>
+            <th>příkaz</th>
+            <th>příkaz</th>
+        {% for key,obsah in zarizeni.items() %}
+        <tr>
+            <td style="background-color:#3cfd16;">{{ obsah }}</td>
+            <td><a href="{{ url_for('flask_error_disable', index = key)}}">zjisti error disable porty</a></td>
+            <td><a href="{{ url_for('flask_podrobnosti_error_disable',index = key) }}">podrobnosti o error disable portech</a></td>
+            <td></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+    

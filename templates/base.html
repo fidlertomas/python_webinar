@@ -1,0 +1,35 @@
+{% block cely %}
+<!doctype html>        
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        {% block head %}
+        <title>{% block title %}{% endblock %}</title>
+        {% endblock %}
+        <style>
+          table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+          
+          th, td {
+            padding: 4px;
+            text-align: left;
+            border-bottom: 1px solid #DDD;
+          }
+          
+          tr:hover {background-color: #D6EEEE;}
+          </style>
+      </head>
+      <body>
+        <div id="content">
+          {% block content %}{% endblock %}
+        </div>
+        <div id="footer">
+          {% block footer %}
+          {% endblock %}
+        </div>
+      </body>
+    </html>
+{% endblock %}
+  
